@@ -295,9 +295,22 @@ const jsCreatCsr = (values: any) => {
       privateKey: privateKeyPEM
     })
     modal?.destroy();
+
+    // Private key encryption
+    // 1.Parse private key
+    const privateKey = forge.pki.privateKeyFromPem(privateKeyPEM);
+    
+    // 2.Uniformly encrypt to PKCS#8 format
+    const encryptedPrivateKey = forge.pki.encryptRsaPrivateKey(
+      privateKey, 
+      formRef?.current?.getFieldValue('psd'),
+      {
+        algorithm: 'aes256', 
+        legacy: false     
+      }
+    );
     downloadZipFile({
-      commonName, csr: csrObj?.getPEM(), 
-      privateKeyPEM: CryptoJS.AES.encrypt(privateKeyPEM, formRef?.current?.getFieldValue('psd')).toString()
+      commonName, csr: csrObj?.getPEM() || csrSM2, privateKeyPEM: encryptedPrivateKey
     })
   }, 500)
 }
