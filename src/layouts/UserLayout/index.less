@@ -1,0 +1,121 @@
+.layout {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  background-color: #f8f8f8;
+
+  .layoutContent {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-top: 44px;
+    padding-bottom: 100px;
+
+    .navContent {
+      width: auto;
+      margin: 0 auto;
+      padding: 50px 0 32px 0;
+
+      .mainContent {
+        text-align: center;
+
+        .mainCard {
+          display: inline-block;
+          width: auto;
+          min-height: 440px;
+          margin: 0 auto;
+          overflow: hidden;
+          text-align: left;
+          background: #fff;
+          border: 1px solid #eaeaea;
+          border-radius: 4px;
+
+          .mianLeft {
+            display: inline-block;
+            width: 540px;
+            height: 440px;
+            background-image: url('../../assets/bg.jpeg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+          }
+
+          .mianRight {
+            display: inline-block;
+            box-sizing: border-box;
+            width: 420px;
+            padding: 0 40px;
+            vertical-align: top;
+
+            .title {
+              margin-top: 60px;
+              margin-bottom: 20px;
+              color: #303030;
+              font-weight: 400;
+              font-size: 24px;
+              line-height: 33px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 9px 0;
+    line-height: 18px;
+    text-align: center;
+    background-color: #f8f8f8;
+  }
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
+    background-color: #fff;
+
+    .layoutContent {
+      position: static !important;
+      flex: 1;
+      min-height: auto;
+      padding: 0 !important;
+
+      .navContent {
+        .mainContent {
+          .mainCard {
+            height: auto;
+            padding: 40px 24px !important;
+            border: 0;
+
+            .mianLeft {
+              display: none;
+            }
+
+            .mianRight {
+              width: 100%;
+              padding: 0;
+
+              .title {
+                margin-top: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .footer {
+      position: static !important;
+      width: 100%;
+      padding: 0;
+      background-color: transparent;
+    }
+  }
+}

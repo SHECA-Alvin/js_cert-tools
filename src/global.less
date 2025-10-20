@@ -1,0 +1,139 @@
+@import '~antd/es/style/themes/default.less';
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.colorWeak {
+  filter: invert(80%);
+}
+
+.ant-layout {
+  min-height: 100vh;
+}
+
+.ant-pro-sider.ant-layout-sider.ant-pro-sider-fixed {
+  left: unset;
+}
+
+.ant-layout-header {
+  height: 55px !important;
+  line-height: 55px !important;
+  .ant-pro-top-nav-header {
+    margin: 0 auto;
+  }
+}
+.ant-pro-grid-content{
+  margin: 0 auto;
+  background: #fff;
+}
+
+.poverWrapBox{
+  background: #fff;
+  display: flex;
+  width: 475px;
+  height: 740px;
+  // height: 805px;
+  .leftRow{
+    width: 220px;
+    display: block;
+    .title{
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .cardItem{
+      cursor: pointer;
+      &:hover{
+        .ant-pro-card-body{
+          .cardText{
+            p{
+              color: #40a9ff !important;
+            }
+          }
+        }
+      }
+      .ant-pro-card-body{
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        .cardText{
+          margin-left: 10px;
+          p{
+            margin: 0;
+            font-size: 14px;
+          }
+          p:nth-child(2) {
+            font-size: 12px;
+            color: #909090;
+          }
+        }
+      }
+    }
+  }
+}
+
+// @media screen and (min-width: 1200px) {
+.ant-pro-top-nav-header {
+  width: 1100px !important;
+}
+.ant-pro-grid-content{
+  width: 1100px !important;
+}
+// }
+// @media screen and (min-width: 992px) and (max-width: 1200px) {
+//   .ant-pro-top-nav-header {
+//     width: 990px !important;
+//   }
+//   .ant-pro-grid-content{
+//     width: 990px !important;
+//   }
+// }
+// @media screen and (min-width: 767px) and (max-width: 992px) {
+//   .ant-pro-top-nav-header {
+//     width: 767px !important;
+//   }
+//   .ant-pro-grid-content{
+//     width: 767px !important;
+//   }
+// }
+
+canvas {
+  display: block;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+@media (max-width: @screen-xs) {
+  .ant-table {
+    width: 100%;
+    overflow-x: auto;
+    &-thead > tr,
+    &-tbody > tr {
+      > th,
+      > td {
+        white-space: pre;
+        > span {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// Compatible with IE11
+@media screen and(-ms-high-contrast: active), (-ms-high-contrast: none) {
+  body .ant-design-pro > .ant-layout {
+    min-height: 100vh;
+  }
+}
