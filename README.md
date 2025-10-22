@@ -4,12 +4,18 @@
 
 ## Description
 
-This tool is entirely implemented using JavaScript code and does not send any requests to the server. It can be used offline after opening the page!
+This tool is entirely implemented in JavaScript, sends no requests to the server, and can be used offline once resources are loaded!
+
+The main functions of the tool are as follows:
+
+1. Generate CSRs and private keys
+2. Certificate format conversion (PEM-JKS and PEM-PFX mutual conversions)
+3. Public-private key matching verification
+4. Private key encryption and decryption
 
 ## Partial code logic
 
 ```javascript
-
  /**
  * Submit Method
  */
@@ -70,8 +76,9 @@ const handleOnFinish = async () => {
 }
 ```
 
-```javascript
+## PEM TO PFX
 
+```javascript
 /**
  * PEM TO PFX
  * @param cert 
@@ -92,9 +99,9 @@ const generatePfx = (cert: string, privateKey: string, password: string) => {
 
 ```
 
+## PEM TO JKS
 
 ```javascript
-
  /**
  * PEM TO JKS
  * @param JKS_VERSION_1（Tomcat  8.5-）
@@ -108,9 +115,9 @@ const generateJks = (cert: string, privateKey: string, password: string, version
 }
 ```
 
+## PFX TO PEM
 
 ```javascript
-
 /**
  * 
  * PFX TO PEM
@@ -197,9 +204,9 @@ const extractFromPfx = async (pfxData) => {
 
 ```
 
+## JKS TO PEM
 
 ```javascript
-
 /**
  * 
  * JKS TO PEM
@@ -227,6 +234,8 @@ const extractFromJks = async (jksData: ArrayBuffer) => {
   }
 }
 ```
+
+## Generate CSR
 
 ```javascript
 /*
@@ -317,12 +326,12 @@ const jsCreatCsr = (values: any) => {
 
 ```
 
-<!-- ## Provided Scripts
+
 
 Ant Design Pro provides some useful script to help you quick start and build with web project, code style check and test.
 
-Scripts provided in `package.json`. It's safe to modify or add additional script:
+Scripts provided in `package.json`. It's safe to modify or add additional script;
 
 ## More
 
-You can view full document on our [official website](https://pro.ant.design). And welcome any feedback in our [github](https://github.com/ant-design/ant-design-pro). -->
+You can view full document on our [official website](https://pro.ant.design). And welcome any feedback in our [github](https://github.com/ant-design/ant-design-pro). 
