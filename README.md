@@ -326,7 +326,7 @@ const jsCreatCsr = (values: any) => {
 
 ```
 
-<img width="2346" height="1630" alt="5cbd947d869bc8c835de4dd125bf4caa" src="https://github.com/user-attachments/assets/a2476da5-d653-47e2-aa29-62992f8ef8d9" />
+
 
 
 Ant Design Pro provides some useful script to help you quick start and build with web project, code style check and test.
